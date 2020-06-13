@@ -22,7 +22,7 @@ const changeProvinceSelect = () => {
     if (provinceSelect && citySelect) {
         provinceSelect.addEventListener('change', e => {
             citySelect.setAttribute('disabled', true);
-            fetch(`../api/get_province_cities.php?pid=${e.target.value}`)
+            fetch(`./api/get_province_cities.php?pid=${e.target.value}`)
             .then(response => response.json())
             .then(res => setCitySelect(res, citySelect))
             .catch(error => setCitySelect({success: false, error}, citySelect));
